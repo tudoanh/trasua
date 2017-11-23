@@ -133,8 +133,9 @@ const DealCard = ({obj}) =>
               </figure>
             </div>
             <div className="media-content">
-              <p className="title is-5">{obj.brand.brand_name}</p>
-              <p className="subtitle is-5"><Truncate lines={1}>{obj.brand.brand_desc}</Truncate></p>
+              <p className="title is-5" style={{marginBottom: 0}}>{obj.brand.brand_name}</p>
+              <p class="tag is-rounded is-warning">{obj.highlight}</p>
+              {/* <p className="subtitle is-5"><Truncate lines={1}>{obj.brand.brand_desc}</Truncate></p> */}
             </div>
           </div>
           <div className="content">
