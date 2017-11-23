@@ -55,8 +55,6 @@ class App extends Component {
    }
 
   render() {
-    console.log(this.state)
-    console.log(`${PATH_BASE}${PATH_SEARCH}/?${PARAM_SEARCH}tra%20sua&province=ha-noi&${PARAM_OFFSET}0&${PARAM_HPP}${DEFAULT_HPP}`)
     const { data, isLoading, nextHref } = this.state
     const list = (data) || []
     return (
