@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment'
 import Truncate from 'react-truncate'
-import ReactMapGL from 'react-map-gl'
 
 
 const DEFAULT_HPP = '12'
