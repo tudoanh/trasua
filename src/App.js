@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment'
 import Truncate from 'react-truncate'
+import ReactMapGL from 'react-map-gl'
 
 
 const DEFAULT_HPP = '12'
@@ -61,12 +62,12 @@ class App extends Component {
       <div>
         <div className="container">
           <div className="section">
-            <div class="hero-body">
-              <div class="container">
-                <h1 class="title is-2">
+            <div className="hero-body">
+              <div className="container">
+                <h1 className="title is-2">
                   Trà sữa giá hời
                 </h1>
-                <h2 class="subtitle">
+                <h2 className="subtitle">
                   Tìm các khuyến mãi giảm giá khi mua trà sữa ở thành phố Hà Nội
                 </h2>
               </div>
@@ -134,7 +135,7 @@ const DealCard = ({obj}) =>
             </div>
             <div className="media-content">
               <p className="title is-5" style={{marginBottom: 0}}>{obj.brand.brand_name}</p>
-              <p class="tag is-rounded is-warning">{obj.highlight}</p>
+              <p className="tag is-rounded is-warning">{obj.highlight}</p>
               {/* <p className="subtitle is-5"><Truncate lines={1}>{obj.brand.brand_desc}</Truncate></p> */}
             </div>
           </div>
