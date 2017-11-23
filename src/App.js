@@ -3,8 +3,6 @@ import moment from 'moment'
 import Truncate from 'react-truncate'
 
 
-const DEFAULT_QUERY = ''
-const DEFAULT_OFFSET = 0
 const DEFAULT_HPP = '12'
 
 const PATH_BASE = 'https://jamja.vn/api/v3'
@@ -30,7 +28,7 @@ class App extends Component {
   }
 
   setData (result) {
-    const { data, nextHref } = this.state
+    const { nextHref } = this.state
     const { objects, meta } = result
     const oldDeals = nextHref ? this.state.data : []
     const updatedDeals = [...oldDeals, ...objects]
