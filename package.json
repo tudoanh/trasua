@@ -18,5 +18,5 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://tudoanh.github.io/trasua"
+  "homepage": "https://muatrasua.com"
 }
