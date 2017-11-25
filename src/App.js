@@ -95,7 +95,6 @@ class App extends Component {
       data: [],
       isLoading: false,
       nextHref: null,
-      filter: [],
       city: { value: 'ha-noi', label: 'Hà Nội' },
       brand: '',
     }
@@ -121,7 +120,7 @@ class App extends Component {
 
   setBrandData (result) {
     const { objects, meta } = result
-    this.setState({ data: objects })
+    this.setState({ data: objects, nextHref: meta.next })
   }
 
   fetchData (city) {
@@ -151,7 +150,11 @@ class App extends Component {
   }
 
   setCity (city) {
-    this.setState({ city: city, nextHref: null, brand: '' })
+    if (city) {
+      this.setState({ city: city, nextHref: null, brand: '' })
+    } else {
+      this.setState({ city: { value: 'ha-noi', label: 'Hà Nội' }, nextHref: null, brand: '' })
+    }
   }
 
   setBrand (brand) {
@@ -170,12 +173,12 @@ class App extends Component {
   }
 
   render() {
-    const { data, isLoading, nextHref, filter } = this.state
+    const { data, isLoading, nextHref } = this.state
     const list = (data) || []
     return (
       <div>
         <div className="container">
-          <div className="section">
+          
             <div className="hero-body">
               <div className="container">
                 <h1 className="title is-2">
@@ -192,7 +195,9 @@ class App extends Component {
                           <div className="field">
                             <div className="control is-expanded">
                               <Select
+                                required={true}
                                 placeholder="Thành phố"
+                                searchable={false}
                                 name="city-field"
                                 value={this.state.city.value}
                                 onChange={this.setCity}
@@ -221,7 +226,6 @@ class App extends Component {
                 </div>
               </div>
             </div>
-          </div>
           <div className="section">
             {
               list.length
@@ -242,8 +246,8 @@ class App extends Component {
 
 
 const NotFound = () => 
-  <div class="has-text-centered">
-    <h1 class='title'>
+  <div className="has-text-centered">
+    <h1 className='title'>
       Hiện tại chúng tôi không tìm thấy khuyến mãi bạn đang cần.
     </h1>
   </div>
