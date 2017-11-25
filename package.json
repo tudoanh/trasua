@@ -7,6 +7,7 @@
     "moment": "^2.19.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
+    "react-ga": "^2.3.5",
     "react-scripts": "1.0.17",
     "react-truncate": "^2.3.0"
   },

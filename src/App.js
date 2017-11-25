@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment'
 import Truncate from 'react-truncate'
+import ReactGA from 'react-ga';
 
 
 const DEFAULT_HPP = '12'
@@ -25,6 +26,8 @@ class App extends Component {
     this.fetchData = this.fetchData.bind(this)
     this.setData = this.setData.bind(this)
     this.fetchNext = this.fetchNext.bind(this)
+    ReactGA.initialize('UA-110174517-1');
+    ReactGA.pageview(window.location.pathname + window.location.search)
   }
 
   setData (result) {
