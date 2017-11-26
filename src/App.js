@@ -131,7 +131,7 @@ class App extends Component {
   }
 
   fetchByBrand (id) {
-    fetch(`${PATH_BASE}${PATH_SEARCH}/?deal_state=selling&brand_id=${id}&${PARAM_OFFSET}0&${PARAM_HPP}${DEFAULT_HPP}`, {timeout: 500})
+    fetch(`${PATH_BASE}${PATH_SEARCH}/?deal_state=selling&brand_id=${id}&province=all&${PARAM_OFFSET}0&${PARAM_HPP}${DEFAULT_HPP}`, {timeout: 500})
      .then(response => response.json())
      .then(result => this.setBrandData(result))
      .catch(e => console.log(e))
@@ -185,7 +185,7 @@ class App extends Component {
                   Trà sữa giá hời
                 </h1>
                 <h2 className="subtitle">
-                  Tìm các khuyến mãi giảm giá khi mua trà sữa ở thành phố Hà Nội
+                  Tìm các khuyến mãi giảm giá khi mua trà sữa ở thành phố Hà Nội và thành phố Hồ Chí Minh
                 </h2>
                 <div className="columns">
                   <div className="column is-10">
