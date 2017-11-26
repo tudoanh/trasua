@@ -85,6 +85,7 @@ const BRANDS = [
   {value: "577f21b76e0b4962bb0e2f2c", label: " LaViDa Coffee and Milk Tea"},
   {value: "57660a9a6e0b497e0ea4bf5b", label: "Trà Tiên Hưởng"},
   {value: "564aff07fda8b93fb0b6e00e", label: "King Taiyaki"},
+  {value: "564b111bfda8b93fb0b6ed88", label: "Ding Tea"}
 ]
 
 class App extends Component {
@@ -96,7 +97,7 @@ class App extends Component {
       isLoading: false,
       nextHref: null,
       city: { value: 'ha-noi', label: 'Hà Nội' },
-      brand: '',
+      brand: {},
     }
 
     this.fetchData = this.fetchData.bind(this)
@@ -153,12 +154,16 @@ class App extends Component {
     if (city) {
       this.setState({ city: city, nextHref: null, brand: '' })
     } else {
-      this.setState({ city: { value: 'ha-noi', label: 'Hà Nội' }, nextHref: null, brand: '' })
+      this.setState({ city: { value: 'ha-noi', label: 'Hà Nội' }, nextHref: null, brand: {} })
     }
   }
 
   setBrand (brand) {
-    this.setState({ brand, nextHref: null, city: {} })
+    if (brand) {
+      this.setState({ brand, nextHref: null, city: {} })
+    } else {
+      this.setState({ city: { value: 'ha-noi', label: 'Hà Nội' }, nextHref: null, brand: {} })
+    }
   }
 
   componentWillUpdate (nextProps, nextState) {
